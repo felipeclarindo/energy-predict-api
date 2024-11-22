@@ -1,10 +1,15 @@
-import pickle
+from pathlib import Path
 
-def load_model() -> object | None: 
+def check_folder(folder_name: str) -> bool:
     try:
-        with open('model_regression.pkl', 'rb') as f:
-            model_regression = pickle.load(f)
-            return model_regression
-    except Exception as e:
-        print(f"É preciso rodar as celular jupyter para carregar o modelo")
-    return None
+        if Path.exists(Path(__file__).resolve().parent.parent.parent / folder_name):
+            return True
+        raise FileNotFoundError("Falha ao carregar o modelo. (Diretório não encontrado)")
+    except FileNotFoundError as e:
+        print(f"Error: {e}")
+    return False
+
+def create_folder(folder_name: str) -> None:
+    print(Path(__file__).resolve().parent.parent.parent / folder_name)
+    if not Path.exists(Path(__file__).resolve() / folder_name):
+        Path.touch(folder_name)
