@@ -1,24 +1,26 @@
+🌍 [Leia em Português](README.pt-BR.md)
+
 # Energy Prediction API
 
-Essa API é alimentada por um modelo de machine learning que prevê o total de energia renovável com base nos dados de diferentes fontes energéticas. O objetivo principal é ajudar na análise de tendências energéticas e promover a sustentabilidade por meio de insights preditivos.
+This API is powered by a machine learning model that predicts total renewable energy based on data from different energy sources. The main objective is to help in the analysis of energy trends and promote sustainability through predictive insights.
 
 ## Tecnologias
 
-- Python 3.x (Linguagem utilizada)
-- flask (Criação da api)
-- scikit-learn (Modelo de machine learning)
-- pickle (serialização do modelo)
-- pandas (Manipulação de dados)
+- `Python 3.x` - Language used.
+- `Flask` - Creation of api.
+- `scikit-learn` - Creation of the machine learning model.
+- `pickle` - Serialization of the model.
+- `pandas` - Data handling.
 
-## EndPoints da API
+## API Endpoints
 
 ### `http://localhost:5000/api`
 
-#### Método: GET
+#### Method: GET
 
-#### Descrição: Retorna informações básicas sobre a API.
+#### Description: Return base description of api.
 
-#### Exemplo de Resposta:
+#### Response example:
 
 ```json
 {
@@ -36,11 +38,11 @@ Essa API é alimentada por um modelo de machine learning que prevê o total de e
 
 ### `http://localhost:5000/api/predict`
 
-#### Método: POST
+#### Method: POST
 
-#### Descrição: Recebe dados das fontes de energia e retorna a previsão do total de energia renovável.-
+#### Description: Receives data from energy sources and returns the forecast of total renewable energy.-
 
-#### Parâmetros Esperados (via query string):
+#### Expected Parameters (via query string):
 
 - `year (int): Ano de referência. `
 - `hydroelectric_power (float): Consumo de energia hidrelétrica. `
@@ -49,7 +51,7 @@ Essa API é alimentada por um modelo de machine learning que prevê o total de e
 - `wind_energy (float): Consumo de energia eólica. `
 - `biomass_energy (float): Consumo de energia de biomassa. `
 
-#### Exemplo de Envio de Dados:
+#### Example of Data Submission:
 
 ```json
 {
@@ -62,7 +64,7 @@ Essa API é alimentada por um modelo de machine learning que prevê o total de e
 }
 ```
 
-#### Exemplo de Resposta:
+#### Response Example
 
 ```json
 {
@@ -71,41 +73,51 @@ Essa API é alimentada por um modelo de machine learning que prevê o total de e
 }
 ```
 
-# Como usar
+# Steps for installing and running.
 
-1. Clone o repositorio:
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/felipeclarindo/energy-predict-api.git
 ```
 
-2. Entre no diretorio
+2. Enter directory:
 
 ```bash
 cd energy-predict-api
 ```
 
-3. Instale as dependencias
+3. Create Virtual Environment:
+
+```bash
+python -m venv .venv
+```
+
+4. Activate the Environment running `.bat` file: `.venv/Scripts/activate.bat`
+
+5. Install the dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Rode as celulas jupyter do arquivo `src/transition_energy_model.ipynb`
+6. Rotate the jupyter cells from the file `src/transition_energy_model.ipynb`
 
-5. Rode a API:
+7. Run the api:
 
 ```bash
 python src/api/api.py
 ```
 
-A Api será disponibilizada em: `http://localhost:5000`
+8. Api will be available at:
 
-## Contribuição
+- `http://localhost:5000`
 
-Contribuições são bem-vindas! Se você tiver sugestões de melhorias, sinta-se à vontade para abrir uma issue ou enviar um pull request.
+## Contribution
 
-## Autor
+Contributions are welcome! If you have suggestions for improvements, feel free to open an issue or submit a pull request.
+
+## Author
 
 **Felipe Clarindo**
 
@@ -113,6 +125,6 @@ Contribuições são bem-vindas! Se você tiver sugestões de melhorias, sinta-s
 - [Instagram](https://www.instagram.com/lipethecoder)
 - [GitHub](https://github.com/felipeclarindo)
 
-## Licença
+## License
 
-Este projeto está licenciado sob a [GNU Affero License](https://www.gnu.org/licenses/agpl-3.0.html).
+This project is licensed under the [GNU Affero License](https://www.gnu.org/licenses/agpl-3.0.html).
